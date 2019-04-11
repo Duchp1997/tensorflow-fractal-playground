@@ -5,7 +5,7 @@ from PIL import Image
 R = 4
 ITER_NUM = 200
 
-
+#函数获得颜色
 def get_color(bg_ratio, ratio):
     def color(z, i):
         if abs(z) < R:
@@ -18,7 +18,7 @@ def get_color(bg_ratio, ratio):
             return v**ratio[0], v**ratio[1], v**ratio[2]
     return color
 
-#函数获得颜色
+
 def gen_julia(Z, c, bg_ratio, ratio):
     xs = tf.constant(np.full(shape=Z.shape, fill_value=c, dtype=Z.dtype))
     zs = tf.Variable(Z)
